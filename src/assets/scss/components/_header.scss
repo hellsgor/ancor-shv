@@ -2,13 +2,65 @@
 @import '@/assets/scss/variables/classes';
 
 #{$header} {
-
-
+  &__banner {
+    width: 100%;
+    height: 266px;
+  }
+  
+  &__bottom-row {
+    display: flex;
+    padding: 24px 26px 26px 0;
+    column-gap: 26px;
+    background-color: $green-blue;
+    color: $white;
+  }
+  
+  &__logo {
+    width: 196px;
+    height: fit-content;
+  }
+  
+  &__title {
+    margin-bottom: 11px;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 31px;
+  }
+  
+  &__benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 700;
+    list-style: none;
+    text-transform: uppercase;
+    line-height: 15px;
+    row-gap: 11px;
+  }
+  
+  &__list-item {
+    display: flex;
+    align-items: center;
+    
+    &:not(:last-child, :first-child) {
+      &:before {
+        margin-right: 10px;
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0;
+        content: '|';
+      }
+    }
+  }
+  
   @media (max-width: #{$mediaMD}) {
     #{$header} {
     }
   }
-
+  
   @media (max-width: #{$mediaSM}) {
     #{$header} {
     }
