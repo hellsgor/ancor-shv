@@ -3,14 +3,62 @@
 @import '@/assets/scss/variables/colors';
 
 #{$footer} {
+  display: flex;
+  
+  &__text {
+    position: relative;
+    padding: 34px 0 34px 30px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.29;
+    background-color: $red;
+    color: $white;
+    
+    &::after {
+      position: absolute;
+      top: 0;
+      right: -109px;
+      width: 0;
+      height: 0;
+      border-top: 176px solid $red;
+      border-right: 111px solid transparent;
+      content: '';
+    }
+  }
+  
+  &__image {
+    width: 295px;
+    height: fit-content;
+  }
 }
 
 @media (max-width: #{$mediaMD}) {
   #{$footer} {
+    &__text {
+      font-size: 22px;
+    }
+    
+    &__image {
+      width: 257px;
+    }
   }
 }
 
 @media (max-width: #{$mediaSM}) {
   #{$footer} {
+    flex-direction: column;
+    
+    &__text {
+      padding: 20px 10px;
+      font-size: 20px;
+      
+      &::after {
+        content: none;
+      }
+    }
+    
+    &__image {
+      width: 100%;
+    }
   }
 }
