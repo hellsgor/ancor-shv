@@ -62,16 +62,32 @@
   
   @media (max-width: #{$mediaMD}) {
     #{$header} {
-      &__bottom-row {
-        padding: 10px 10px 20px;
-        flex-direction: column;
-        row-gap: 12px;
+      &__logo {
+        width: 162px;
+      }
+      
+      &__list-item {
+        &::before {
+          content: none;
+        }
+        
+        &:nth-child(even) {
+          &::before {
+            content: '|';
+          }
+        }
       }
     }
   }
   
   @media (max-width: #{$mediaSM}) {
     #{$header} {
+      &__bottom-row {
+        padding: 10px 10px 20px;
+        flex-direction: column;
+        row-gap: 12px;
+      }
+      
       &__title {
         margin-bottom: 6px;
         font-size: 24px;
@@ -98,7 +114,6 @@
         }
         
         &:nth-child(even) {
-          margin-right: 50px;
           
           &::before {
             content: '|';
