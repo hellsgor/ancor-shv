@@ -2,15 +2,173 @@
 @import '@/assets/scss/variables/classes';
 
 #{$header} {
-
-
-  @media (max-width: #{$mediaMD}) {
-    #{$header} {
+  &__banner {
+    width: 100%;
+    height: auto;
+  }
+  
+  &__bottom-row {
+    display: flex;
+    padding: 24px 26px 26px 0;
+    margin-top: -6px;
+    column-gap: 26px;
+    background-color: $green-blue;
+    color: $white;
+  }
+  
+  &__logo {
+    width: 196px;
+    height: fit-content;
+  }
+  
+  &__title {
+    margin-bottom: 11px;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 31px;
+  }
+  
+  &__benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 700;
+    list-style: none;
+    text-transform: uppercase;
+    line-height: 15px;
+    row-gap: 11px;
+  }
+  
+  &__list-item {
+    display: flex;
+    align-items: center;
+    
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    
+    &:before {
+      padding-bottom: 4px;
+      margin-right: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    
+    &:not(:last-child, :first-child) {
+      &::before {
+        content: '|';
+      }
     }
   }
-
+  
+  @media (max-width: #{$mediaMD}) {
+    #{$header} {
+      &__logo {
+        width: 162px;
+      }
+      
+      &__list-item {
+        &::before {
+          content: none;
+        }
+        
+        &:nth-child(even) {
+          &::before {
+            content: '|';
+          }
+        }
+      }
+    }
+  }
+  
   @media (max-width: #{$mediaSM}) {
     #{$header} {
+      &__bottom-row {
+        padding: 10px 10px 20px;
+        flex-direction: column;
+        row-gap: 12px;
+      }
+      
+      &__title {
+        margin-bottom: 6px;
+        font-size: 24px;
+      }
+      
+      &__logo {
+        width: 118px;
+      }
+      
+      &__benefits-list {
+        font-size: 11px;
+        line-height: 12px;
+        row-gap: 6px;
+      }
+      
+      &__list-item {
+        &::before {
+          padding-bottom: 3px;
+          margin-right: 6px;
+          font-size: 12px;
+          content: none;
+        }
+        
+        &:not(:first-child) {
+          &::before {
+            content: '|';
+          }
+        }
+        
+        &:not(:last-child) {
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 519px) {
+    #{$header} {
+      &__list-item {
+        &:nth-child(4) {
+          &::before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 440px) {
+    #{$header} {
+      &__list-item {
+        &:nth-child(3) {
+          &::before {
+            content: none;
+          }
+        }
+        
+        &:nth-child(4) {
+          &::before {
+            content: '|';
+          }
+        }
+        
+        &:nth-child(2) {
+          margin-right: 88px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 350px) {
+    #{$header} {
+      &__list-item {
+        &:nth-child(2) {
+          margin-right: 40px;
+        }
+      }
     }
   }
 }
